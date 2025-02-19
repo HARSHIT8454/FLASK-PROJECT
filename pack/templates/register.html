@@ -1,0 +1,48 @@
+{%extends 'base_login.html'%}
+{%block head%}
+<title>ImDb Registration</title>
+{%endblock%}
+{%block body%}
+
+
+<div class="container">
+    <div class="logo">
+
+    </div>
+
+    <div class="form-container">
+        <h2>Create Account</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form method="POST">
+            {{form.hidden_tag()}}
+            {{form.name.label(class='label')}}
+            {{form.name(class='input', placeholder="First and last name")}}
+
+            {{form.email.label(class='label')}}
+            {{form.email(class='input',placeholder='Enter your email')}}
+            
+            {{form.password.label(class='label')}}
+            {{form.password(class='input',placeholder='At least 8 characters')}}
+
+            {{form.password2.label(class='label')}}
+            {{form.password2(class='input',placeholder='Confirm your password')}}
+
+            {{form.submit(class='button')}}
+
+            <p class="terms">By creating an account, you agree to IMDb’s <a href="#">Conditions of Use</a> and <a href="#">Privacy Policy</a>.</p>
+        </form>
+
+        <hr>
+
+        <p class="signin">Already have an account? <a href="{{url_for('login')}}">Sign in</a></p>
+    </div>
+</div>
+{%endblock%}

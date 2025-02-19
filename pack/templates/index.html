@@ -1,0 +1,356 @@
+{%extends 'base.html'%}
+
+{%block head%}
+    
+        <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+        <title>Home</title>
+{%endblock%}
+
+{%block body%}
+        <!-- header -->
+        <header class="header" id="header">
+            <div class="head-top">
+                <div class="site-logo">
+                    <a href="#" class="logo-link">
+                        <img src="{{ url_for('static', filename='images/trivago-logo.png') }}" alt="Trivago pyth" class="logo-img">
+                    </a>
+                </div>
+
+                <ul class="navbar">
+                    <li><a href="#header">HOME</a></li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href="#rooms">ROOMS</a></li>
+                    <li><a href="#customers">CUSTOMERS</a></li>
+                    <li><a href="{{url_for('login')}}" class="nav-btn">LOGIN</a></li>
+                    <li><a href="{{url_for('register')}}" class="nav-btn">REGISTER</a></li>
+                </ul>
+            </div>
+
+            <div class="head-bottom flex">
+                <h2>DISCOVER LUXURY & COMFORT</h2>
+                <p>Experience world-class hospitality with breathtaking views and exceptional service</p>
+                <button type="button" class="head-btn">EXPLORE NOW</button>
+            </div>
+        </header>
+        <!-- end of header -->
+
+        <!-- side navbar -->
+
+        </div>
+        <!-- end of side navbar -->
+
+        <!-- fullscreen modal -->
+        <div id = "modal"></div>
+        <!-- end of fullscreen modal -->
+
+        <!-- body content  -->
+        <section class = "services sec-width" id = "services">
+            <div class = "title">
+                <h2>EXCEPTIONAL SERVICES</h2>
+            </div>
+            <div class = "services-container">
+                <!-- single service -->
+                <article class = "service">
+                    <div class = "service-icon">
+                        <span>
+                            <i class = "fas fa-utensils"></i>
+                        </span>
+                    </div>
+                    <div class = "service-content">
+                        <h2>Fine Dining Experience</h2>
+                        <p>Savor exquisite cuisine at our award-winning restaurants, featuring international dishes crafted by world-class chefs.</p>
+                        <button type = "button" class = "btn">Learn More</button>
+                    </div>
+                </article>
+                <!-- end of single service -->
+                <!-- single service -->
+                <article class = "service">
+                    <div class = "service-icon">
+                        <span>
+                            <i class = "fas fa-spa"></i>
+                        </span>
+                    </div>
+                    <div class = "service-content">
+                        <h2>Luxury Spa & Wellness</h2>
+                        <p>Rejuvenate your body and mind in our premium spa, offering therapeutic treatments and relaxation experiences.</p>
+                        <button type = "button" class = "btn">View Services</button>
+                    </div>
+                </article>
+                <!-- end of single service -->
+                <!-- single service -->
+                <article class = "service">
+                    <div class = "service-icon">
+                        <span>
+                            <i class = "fas fa-dumbbell"></i>
+                        </span>
+                    </div>
+                    <div class = "service-content">
+                        <h2>State-of-the-Art Fitness</h2>
+                        <p>Stay active in our fully-equipped fitness center with personal trainers and panoramic city views.</p>
+                        <button type = "button" class = "btn">Explore</button>
+                    </div>
+                </article>
+                <!-- end of single service -->
+            </div>
+        </section>
+
+        <div class = "book">
+            <form class = "book-form">
+                <div class = "form-item">
+                    <label for = "checkin-date">Check In Date: </label>
+                    <input type = "date" id = "chekin-date">
+                </div>
+                <div class = "form-item">
+                    <label for = "checkout-date">Check Out Date: </label>
+                    <input type = "date" id = "chekout-date">
+                </div>
+                <div class = "form-item">
+                    <label for = "adult">Adults: </label>
+                    <input type = "number" min = "1" value = "1" id = "adult">
+                </div>
+                <div class = "form-item">
+                    <label for = "children">Children: </label>
+                    <input type = "number" min = "1" value = "1" id = "children">
+                </div>
+                <div class = "form-item">
+                    <label for = "rooms">Rooms: </label>
+                    <input type = "number" min = "1" value = "1" id = "rooms">
+                </div>
+                <div class = "form-item">
+                    <input type = "submit" class = "btn" value = "Book Now">
+                </div>
+            </form>
+        </div>
+
+        <section class = "rooms sec-width" id = "rooms">
+            <div class = "title">
+                <h2>LUXURY ACCOMMODATIONS</h2>
+            </div>
+            <div class = "rooms-container">
+                <!-- single room -->
+                <article class = "room">
+                    <div class = "room-image">
+                        <img src="{{ url_for('static', filename='images/img1.jpg') }}" 
+                             alt="Premium Suite">
+                    </div>
+                    <div class = "room-text">
+                        <h3>Premium Ocean Suite</h3>
+                        <ul>
+                            <li>
+                                <i class = "fas fa-check"></i>
+                                Panoramic Ocean View
+                            </li>
+                            <li>
+                                <i class = "fas fa-check"></i>
+                                King-Size Luxury Bed
+                            </li>
+                            <li>
+                                <i class = "fas fa-check"></i>
+                                Private Balcony
+                            </li>
+                            <li>
+                                <i class = "fas fa-check"></i>
+                                Premium Amenities
+                            </li>
+                        </ul>
+                        <p class = "rate">
+                            $299 <span>per night</span>
+                        </p>
+                        <button type = "button" class = "btn">Book This Suite</button>
+                    </div>
+                </article>
+                <!-- end of single room -->
+                <!-- single room -->
+                <article class = "room">
+                    <div class = "room-image">
+                        <img src="{{ url_for('static', filename='images/img2.jpg') }}" 
+                             alt="Deluxe Room">
+                    </div>
+                    <div class = "room-text">
+                        <h3>Executive Deluxe Room</h3>
+                        <ul>
+                            <li>
+                                <i class = "fas fa-check"></i>
+                                City Skyline View
+                            </li>
+                            <li>
+                                <i class = "fas fa-check"></i>
+                                Queen-Size Bed
+                            </li>
+                            <li>
+                                <i class = "fas fa-check"></i>
+                                Work Station
+                            </li>
+                            <li>
+                                <i class = "fas fa-check"></i>
+                                High-Speed WiFi
+                            </li>
+                        </ul>
+                        <p class = "rate">
+                            $199 <span>per night</span>
+                        </p>
+                        <button type = "button" class = "btn">Reserve Now</button>
+                    </div>
+                </article>
+                <!-- end of single room -->
+                <!-- single room -->
+                <article class = "room">
+                    <div class = "room-image">
+                        <img src="{{ url_for('static', filename='images/img3.jpg') }}" 
+                             alt="Classic Room">
+                    </div>
+                    <div class = "room-text">
+                        <h3>Classic Comfort Room</h3>
+                        <ul>
+                            <li>
+                                <i class = "fas fa-check"></i>
+                                Garden View
+                            </li>
+                            <li>
+                                <i class = "fas fa-check"></i>
+                                Twin Beds Available
+                            </li>
+                            <li>
+                                <i class = "fas fa-check"></i>
+                                Modern Amenities
+                            </li>
+                            <li>
+                                <i class = "fas fa-check"></i>
+                                24/7 Room Service
+                            </li>
+                        </ul>
+                        <p class = "rate">
+                            $149 <span>per night</span>
+                        </p>
+                        <button type = "button" class = "btn">Book Now</button>
+                    </div>
+                </article>
+                <!-- end of single room -->
+            </div>
+        </section>
+
+
+        <section class = "customers" id = "customers">
+            <div class = "sec-width">
+                <div class = "title">
+                    <h2>GUEST EXPERIENCES</h2>
+                </div>
+                <div class = "customers-container">
+                    <!-- single customer -->
+                    <div class = "customer">
+                        <img src="{{ url_for('static', filename='images/cus1.jpg') }}" alt="Guest Review">
+                        <h3>Sarah Thompson</h3>
+                        <p class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </p>
+                        <p>"An absolutely magnificent experience! The ocean view suite was breathtaking, and the staff went above and beyond to make our stay memorable."</p>
+                        <span>Business Traveler, UK</span>
+                    </div>
+                    <!-- end of single customer -->
+                    <!-- single customer -->
+                    <div class = "customer">
+                        <img src="{{ url_for('static', filename='images/cus2.jpg') }}" alt="Guest Review">
+                        <h3>Michael Chen</h3>
+                        <p class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </p>
+                        <p>"Perfect blend of luxury and comfort. The spa services were exceptional, and the dining experience was unforgettable."</p>
+                        <span>Luxury Traveler, Singapore</span>
+                    </div>
+                    <!-- end of single customer -->
+                    <!-- single customer -->
+                    <div class = "customer">
+                        <img src="{{ url_for('static', filename='images/cus3.jpg') }}" alt="Guest Review">
+                        <h3>Emma Rodriguez</h3>
+                        <p class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </p>
+                        <p>"From the moment we arrived, we were treated like royalty. The attention to detail and personalized service made our honeymoon perfect."</p>
+                        <span>Honeymoon Guest, Spain</span>
+                    </div>
+                    <!-- end of single customer -->
+                </div>
+            </div>
+        </section>
+        <!-- end of body content -->
+        
+        <!-- footer -->
+        <footer class = "footer">
+            <div class = "footer-container">
+                <div>
+                    <h2>About Us </h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque sapiente mollitia doloribus provident? Eos quisquam aliquid vel dolorum, impedit culpa.</p>
+                    <ul class = "social-icons">
+                        <li class = "flex">
+                            <i class = "fa fa-twitter fa-2x"></i>
+                        </li>
+                        <li class = "flex">
+                            <i class = "fa fa-facebook fa-2x"></i>
+                        </li>
+                        <li class = "flex">
+                            <i class = "fa fa-instagram fa-2x"></i>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2>Useful Links</h2>
+                    <a href = "#">Blog</a>
+                    <a href = "#">Rooms</a>
+                    <a href = "#">Subscription</a>
+                    <a href = "#">Gift Card</a>
+                </div>
+
+                <div>
+                    <h2>Privacy</h2>
+                    <a href = "#">Career</a>
+                    <a href = "#">About Us</a>
+                    <a href = "#">Contact Us</a>
+                    <a href = "#">Services</a>
+                </div>
+
+                <div>
+                    <h2>Have A Question</h2>
+                    <div class = "contact-item">
+                        <span>
+                            <i class = "fas fa-map-marker-alt"></i>
+                        </span>
+                        <span>
+                            203 Fake St.Mountain View, San Francisco, California, USA
+                        </span>
+                    </div>
+                    <div class = "contact-item">
+                        <span>
+                            <i class = "fas fa-phone-alt"></i>
+                        </span>
+                        <span>
+                            +84545 37534 48
+                        </span>
+                    </div>
+                    <div class = "contact-item">
+                        <span>
+                            <i class = "fas fa-envelope"></i>
+                        </span>
+                        <span>
+                            info@domain.com
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end of footer -->
+        
+        <script src="url_for('static',filename='js/script.js')"></script>
+{%endblock%}
